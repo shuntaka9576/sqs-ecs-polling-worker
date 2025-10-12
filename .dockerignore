@@ -1,0 +1,7 @@
+*
+
+!pnpm-lock.yaml
+!package.json
+!pnpm-workspace.yaml
+!packages/worker
+!.npmrc

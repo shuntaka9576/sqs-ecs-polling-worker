@@ -1,0 +1,25 @@
+{
+  "name": "worker",
+  "private": true,
+  "version": "0.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "tsx src/index.ts",
+    "dev": "tsx --watch --env-file=.env.dev src/index.ts",
+    "build": "tsdown",
+    "type-check": "tsc --noEmit",
+    "test": "vitest run"
+  },
+  "devDependencies": {
+    "@types/node": "24.0.10",
+    "aws-sdk-client-mock": "^4.1.0",
+    "tsdown": "^0.15.6",
+    "vitest": "^2.1.8"
+  },
+  "dependencies": {
+    "@aws-sdk/client-ecs": "^3.906.0",
+    "@aws-sdk/client-sqs": "^3.906.0",
+    "@hono/node-server": "^1.15.0",
+    "pino": "^9.7.0"
+  }
+}

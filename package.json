@@ -1,0 +1,21 @@
+{
+  "name": "sqs-ecs-polling-worker",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "spell-check": "cspell lint . --cache --gitignore",
+    "type-check": "pnpm --recursive type-check",
+    "fix": "pnpm run /fix:.*/",
+    "fix:ws": "pnpm --recursive --if-present fix",
+    "fix:root": "biome check . --write"
+  },
+  "keywords": [],
+  "author": "",
+  "devDependencies": {
+    "@biomejs/biome": "2.2.5",
+    "cspell": "^9.2.1",
+    "tsx": "^4.20.6",
+    "typescript": "^5.9.3"
+  },
+  "packageManager": "pnpm@10.18.2"
+}
