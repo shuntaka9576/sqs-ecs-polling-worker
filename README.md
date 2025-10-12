@@ -59,9 +59,7 @@ QUEUE_URL=$(aws ssm get-parameter \
   --query 'Parameter.Value' \
   --output text)
 
-aws sqs send-message \
-  --queue-url ${QUEUE_URL} \
-  --message-body "テストメッセージ"
+seq 1 5 | xargs -P 5 -I {} aws sqs send-message --queue-url $QUEUE_URL --message-body "{\"type\": \"test\", \"id\": \"msg_{}\"}"
 ```
 
 ## クリーンアップ
