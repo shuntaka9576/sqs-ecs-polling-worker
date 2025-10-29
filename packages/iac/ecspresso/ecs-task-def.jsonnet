@@ -22,7 +22,7 @@ local ssmParams = import 'ssm-params.jsonnet';
         },
         {
           name: 'PROCESSING_SLEEP_DURATION_MS',
-          value: std.toString(10 * 60 * 1000),  // 10分
+          value: std.toString(2 * 60 * 1000),  // 2分
         },
       ],
       essential: true,

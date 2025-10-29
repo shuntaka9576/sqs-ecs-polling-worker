@@ -18,6 +18,7 @@ const PROCESSING_SLEEP_DURATION_MS = Number.parseInt(
   process.env.PROCESSING_SLEEP_DURATION_MS ?? '5000',
   10
 );
+const TASK_PROTECTION_ERROR_SLEEP_MS = 5000;
 
 export const processSingleMessage = async (
   cluster: string,
@@ -63,7 +64,10 @@ export const processSingleMessage = async (
         'Task protection failed, exiting gracefully'
       );
 
-      return false;
+      await new Promise((resolve) =>
+        setTimeout(resolve, TASK_PROTECTION_ERROR_SLEEP_MS)
+      );
+      return true;
     }
 
     await cleanupMessageAndUnprotectTask(cluster, taskArn, message, queueUrl);
